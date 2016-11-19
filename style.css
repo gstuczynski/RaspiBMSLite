@@ -1,0 +1,74 @@
+body {
+    color: #303030;
+    background-color: #000000;
+    text-align: center;
+
+}
+
+.container {
+    background-color: black;
+    width: 850px;
+    height: 700px;
+    margin: auto;
+}
+
+.bulb {
+    background-color: black;
+
+    height: 128px;
+}
+
+.camControl {
+    background-color: black;
+    height: 410px;
+}
+.piControl{
+	background-color: black;
+	height: 130px;
+}
+
+
+
+#turnLeft {
+    border-style: solid;
+    border-width: 136.5px 101px 136.5px 0;
+    border-color: transparent #FFA500 transparent transparent;
+    background-color: black;
+    float: left;
+		margin: 20px;
+}
+
+#turnRight {
+    border-style: solid;
+    border-width: 136.5px 0 136.5px 101px;
+    border-color: transparent transparent transparent #FFA500;
+    background-color: black;
+    float: left;
+		margin: 20px;
+}
+
+#stream {
+    width: 520px;
+    height: 390px;
+    float: left;
+    margin: 10px;
+    border: none;
+}
+#bulbON{
+	background:url(img/bulb_off.png) no-repeat;
+	width: 128px;
+	height: 128px;
+border: none;
+}
+#motion {
+		background:url(img/play.png) no-repeat;
+    width: 128px;
+    height: 128px;
+    border: none;
+}
+#powerOFF{
+	background:url(img/pioff.png) no-repeat;
+	width: 128px;
+	height: 128px;
+  border: none;
+}

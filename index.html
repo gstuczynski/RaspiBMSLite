@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+    <title>Test</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <!--  <meta http-equiv="refresh" content="5" /><!-- odswierzam co 5s-->
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script type="text/javascript" src="jquery.js"></script>
+
+
+    <script type="text/javascript">
+            var b = 1;
+            var m = 1;
+            var ctlValue = 'w';
+            var motionstatValue = 'start';
+
+        $(document).ready(function() {
+
+            var angle = 500;
+            $('#turnLeft').click(function() {
+
+                if (angle > 500) {
+                    angle -= 50;
+                    $.get("control.php", {
+                        a: angle,
+                        mode: 'turn'
+                    }, function(data) {});
+                }
+            });
+
+            $('#turnRight').click(function() {
+
+                if (angle < 2500) {
+                    angle += 50;
+                    $.get("control.php", {
+                        a: angle,
+                        mode: 'turn'
+                    }, function(data) {});
+                }
+            }); //turnRight
+
+
+            $('#bulbON').click(function() {
+
+                if (b == 0) {
+                    $('#bulbON').css("background", "url(img/bulb_on.png)");
+                    b = 1;
+                    ctlValue = 'r'
+                } else {
+                    $('#bulbON').css("background", "url(img/bulb_off.png)");
+                    b = 0;
+                    ctlValue = 'w'
+                }
+
+                $.get("control.php", {
+                    ctl: ctlValue,
+                    mode: 'bulb'
+                }, function(data) {});
+            }); //bulbON
+
+
+
+            $('#motion').click(function() {
+                if (m == 1) {
+                    $('#motion').css("background", "url(img/pause.png)");
+                    m = 0;
+                    motionstatValue = 'stop'
+                } else {
+                    $('#motion').css("background", "url(img/play.png)");
+                    m = 1;
+                    motionstatValue = 'start'
+                }
+                $.get("control.php", {
+                    motionstat: motionstatValue,
+                    mode: 'motionservice'
+                }, function(data) {});
+
+            }); //motionOFF
+            $('#powerOFF').click(function() {
+                $.get("control.php", {
+                    mode: 'poweroff'
+                }, function(data) {});
+            }); //powerOFF
+
+        }); //ready
+
+    </script>
+
+</head>
+
+
+
+<body>
+
+
+    <div class="container">
+
+        <div class="bulb">
+            <button id="bulbON"></button>
+        </div>
+
+        <div class="camControl">
+            <button id="turnLeft"></button>
+            <img id="stream" src="http://89.68.169.159:8080/" alt="device not found" />
+            <!--http://89.68.169.159:8080/-->
+            <button id="turnRight"></button>
+        </div>
+
+        <div class="piControl">
+            <button id="motion"></button>
+            <button id="powerOFF"></button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
