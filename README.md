@@ -34,8 +34,11 @@ go to /home/pi and get library pigpio and unzip
 
 go to PIGPIO, compile and install library
 >cd PIGPIO
+
 >sudo make
+
 >sudo make install
+
 
 Run daemon
 >sudo pigpiod
