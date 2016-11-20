@@ -57,3 +57,12 @@ if you would like starting and stopping camera, and also can turn off raspberry 
 >sudo vim /etc/sudoers
 and add
 >www-data ALL=NOPASSWD: /etc/init.d/motion
+>www-data ALL=NOPASSWD: /sbin/shutdown
+
+start camera
+>sudo service motion start
+
+Now put files into /var/www/html
+set your ipaddres into index.html
+
+#ENJOY
