@@ -18,6 +18,7 @@
 
 update repository	
 >sudo apt-get update
+
 install apache and php5
 
 >sudo apt-get install apache2 -y
